@@ -68,3 +68,7 @@ group :test do
   gem 'minitest-rails'
   gem 'minitest-reporters'
 end
+
+group :seed do
+  gem 'faker'
+end

@@ -1,0 +1,33 @@
+<h2> page_title </h2>
+
+<%= form_for @reservation do |f| %>
+
+  <ul>
+    <li>
+      <%= f.label :start_date %>
+      <%= f.date_field :start_date %>
+    </li>
+    <li>
+      <%= f.label :end_date %>
+      <%= f.date_field :end_date %>=
+    </li>
+    <li>
+      <%= f.label :guest_last_name %>
+      <%= f.text_field :guest_last_name %>
+    </li>
+    <li>
+      <%= f.label :guest_first_name %>
+      <%= f.text_field :guest_first_name %>
+    </li>
+    <li>
+      <%= f.label :room_id %>
+      <%= f.number_field :room_id %>
+    </li>
+    <li>
+      <%= f.label :daily_rate %>
+      <%= f.number_field :daily_rate, :step: 0.01 %>
+    </li>
+    <li>
+      <%= f.submit action_name %>
+    </li>
+  </ul>
