@@ -1,33 +1,39 @@
-<h2> page_title </h2>
+<h2> <%= page_title %> </h2>
 
 <%= form_for @reservation do |f| %>
 
-  <ul>
+  <ul class='container'>
     <li>
       <%= f.label :start_date %>
-      <%= f.date_field :start_date %>
+      <%= f.date_field :start_date, class: 'input is-small' %>
     </li>
     <li>
       <%= f.label :end_date %>
-      <%= f.date_field :end_date %>=
+      <%= f.date_field :end_date, class: 'input is-small' %>
     </li>
     <li>
       <%= f.label :guest_last_name %>
-      <%= f.text_field :guest_last_name %>
+      <%= f.text_field :guest_last_name, class: 'input is-small' %>
     </li>
     <li>
       <%= f.label :guest_first_name %>
-      <%= f.text_field :guest_first_name %>
+      <%= f.text_field :guest_first_name, class: 'input is-small' %>
     </li>
     <li>
       <%= f.label :room_id %>
-      <%= f.number_field :room_id %>
+      <%= f.number_field :room_id, class: 'input is-small' %>
     </li>
     <li>
       <%= f.label :daily_rate %>
-      <%= f.number_field :daily_rate, :step: 0.01 %>
+      <%= f.number_field :daily_rate, step: 0.01, class: 'input is-small' %>
     </li>
+    <br><br>
     <li>
-      <%= f.submit action_name %>
+      <div class='field is-grouped'>
+        <%= f.submit action_name, class: 'button' %>
+        <%= f.button 'Cancel', class: 'button' %>
+      </div>
     </li>
   </ul>
+
+<% end %>

@@ -6,11 +6,17 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
   </head>
 
   <body>
     <header>
-      <h1> Hotel Online </h1>
+      <nav class='navbar'>
+        <h2> Hotel Online </h2>
+        <%= link_to 'Home', reservations_path, class: 'navbar-item' %></div>
+        <%= link_to 'New Reservation', new_reservation_path, class: 'navbar-item' %>
+      </nav>
     </header>
     <%= yield %>
   </body>
