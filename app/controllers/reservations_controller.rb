@@ -27,6 +27,6 @@ class ReservationsController < ApplicationController
   private
 
   def reservation_params
-    return params.require(:start_date, :end_date, :guest_last_name)
+    return params.require(:start_date, :end_date, :guest_last_name, :room_id).permit(:guest_first_name, :daily_rate)
   end
 end
