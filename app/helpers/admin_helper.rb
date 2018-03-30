@@ -10,6 +10,10 @@ module AdminHelper
     Reservation.create(new_details)
   end
 
-
+  def list_reservations(start_date)
+    start = start_date
+    date_reservations = Reservation.where("start_date <= ? and end_date > ?", start, start)
+    return date_reservations.empty? ? nil : date_reservations
+  end
 
 end

@@ -15,7 +15,7 @@ class AdminController < ApplicationController
 
   def show
     start_date = params[:start_date]
-    @days_reservations = list_reservations(start_date)
+    @days_reservations = helpers.list_reservations(start_date)
   end
 
   def edit
@@ -27,12 +27,4 @@ class AdminController < ApplicationController
   def delete
   end
 
-  private
-
-  def list_reservations(start_date)
-    start = start_date.to_datetime
-    reservations = Reservation.all
-    date_reservations = reservations.where("start_date < ? and end_date > ?", start, start)
-    return date_reservations.empty? ? nil : date_reservations
-  end
 end
