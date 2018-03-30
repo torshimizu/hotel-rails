@@ -1,24 +1,7 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Wanted to practice Rails, so I took our Ada Developer's Academy [Hotel](https://github.com/torshimizu/hotel) project and turned it into a Rails application!
 
-Things you may want to cover:
+So far, I have set up the application to create, manage, and track reservations, but will work on adding reserving blocks of rooms in the future.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The CSS in the project is limited as I wanted to focus on the logic and set up in rails (linking models, multiple controllers, etc). 
