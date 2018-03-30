@@ -23,3 +23,16 @@ li {
   list-style-type: none;
   margin-bottom: 2rem;
 }
+
+main {
+  margin-left: 2vw;
+}
+
+.reservation-info {
+  margin-bottom: 2em;
+}
+
+.room-show-header {
+  font-size: 2em;
+  font-weight: bold;
+}

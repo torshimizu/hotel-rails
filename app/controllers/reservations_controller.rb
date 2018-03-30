@@ -11,10 +11,7 @@ class ReservationsController < ApplicationController
   def create
     info = params[:reservation]
     available_room = helpers.get_available_room(info[:start_date], info[:end_date])
-    @new_reservation = Reservation.new
-    @new_reservation.start_date = info[:start_date]
-    @new_reservation.end_date = info[:end_date]
-    @new_reservation.guest_last_name = info[:guest_last_name]
+    @new_reservation = Reservation.new(reservation_params)
     @new_reservation.room_id = available_room.id
 
     if @new_reservation.save
@@ -40,8 +37,8 @@ class ReservationsController < ApplicationController
 
   private
 
-  # def reservation_params
-  #   return params.require(:start_date, :end_date, :guest_last_name).permit(:guest_first_name, :daily_rate)
-  # end
+  def reservation_params
+    return params.require(:reservation).permit(:start_date, :end_date, :guest_last_name, :guest_first_name, :daily_rate)
+  end
 
 end

@@ -1,0 +1,19 @@
+<h4 class='room-show-header'> Room: <%= @room.id %> </h4>
+
+<ul>
+  <% @room.reservations.each do |reservation| %>
+    <li>
+      <ul class='reservation-info'>
+        <li> Last Name: <%= reservation.guest_last_name %> </li>
+        <li>
+          <% if !reservation.guest_first_name.nil? %>
+            First Name: <%= reservation.guest_first_name %>
+          <% end %>
+        </li>
+        <li> Start Date: <%= reservation.start_date %> </li>
+        <li> End Date: <%= reservation.end_date %> </li>
+        <li> Daily Rate: <%= reservation.daily_rate %> </li>
+      </ul>
+    </li>
+  <% end %>
+</ul>

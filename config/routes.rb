@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   root 'admin#index'
   resources :reservations
   resources :rooms, only: [:index, :show]
-  resources :admin
+  resources :admin, only: [:index, :show]
 end

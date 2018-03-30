@@ -5,15 +5,6 @@ class AdminController < ApplicationController
     @reservations = Reservation.all
   end
 
-  def new
-    # new reservation
-    
-  end
-
-  def create
-
-  end
-
   def show
     start_date = params[:start_date]
     room_id = params[:room_id]
@@ -23,15 +14,6 @@ class AdminController < ApplicationController
     else
       @found_reservation = helpers.find_reservation(start_date: start_date, room_id: room_id)
     end
-  end
-
-  def edit
-  end
-
-  def update
-  end
-
-  def delete
   end
 
 end
