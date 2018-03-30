@@ -11,9 +11,20 @@
   <% end %>
 
 </ul>
+<br><br>
 
-<%= form_tag '/admin/1', method: 'get' do %>
+<%# figure out how to make this a partial %>
+<%= form_tag '/admin/show', method: 'get' do %>
   <%= label_tag :start_date %>
   <%= date_field_tag :start_date %>
-  <%= submit_tag 'Get Reservations' %>
+  <%= submit_tag 'See All Reservations for Date' %>
+<% end %>
+
+
+<%= form_tag '/admin/show', method: 'get' do %>
+  <%= label_tag :room_id %>
+  <%= number_field_tag :room_id %>
+  <%= label_tag :start_date %>
+  <%= date_field_tag :start_date %>
+  <%= submit_tag 'Find Reservation' %>
 <% end %>
