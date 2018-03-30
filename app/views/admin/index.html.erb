@@ -17,7 +17,7 @@
 <%= form_tag '/admin/show', method: 'get' do %>
   <%= label_tag :start_date %>
   <%= date_field_tag :start_date %>
-  <%= submit_tag 'See All Reservations for Date' %>
+  <%= submit_tag 'See All Reservations for Date', class: 'button is-primary is-outlined is-small' %>
 <% end %>
 
 
@@ -26,5 +26,5 @@
   <%= number_field_tag :room_id %>
   <%= label_tag :start_date %>
   <%= date_field_tag :start_date %>
-  <%= submit_tag 'Find Reservation' %>
+  <%= submit_tag 'Find Reservation', class: 'button is-primary is-outlined is-small' %>
 <% end %>

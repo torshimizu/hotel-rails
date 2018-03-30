@@ -12,21 +12,5 @@ module AdminHelper
     return found_reservation.empty? ? nil : found_reservation
   end
 
-  def new_reservation(input)
 
-    available_room = find_available_rooms(start_date, end_date).first
-
-    if !available_room.empty?
-      return 'I have found a room!'
-    else
-      return 'This sucks'
-    end
-  end
-
-  def find_available_rooms(start_date, end_date)
-    rooms = Room.all
-    available_rooms = rooms.select { |room| room.check_availability(start_date, end_date) == :AVAILABLE }
-
-    return available_rooms
-  end
 end
