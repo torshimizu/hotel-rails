@@ -11,11 +11,11 @@ class ReservationsController < ApplicationController
   def create
     info = params[:reservation]
     available_room = helpers.get_available_room(info[:start_date], info[:end_date])
-    @new_reservation = Reservation.new(reservation_params)
-    @new_reservation.room_id = available_room.id
+    @reservation = Reservation.new(reservation_params)
+    @reservation.room_id = available_room.id
 
-    if @new_reservation.save
-      redirect_to reservation_path(@new_reservation.id)
+    if @reservation.save
+      redirect_to reservation_path(@reservation.id)
     else
       render :new
     end
