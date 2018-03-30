@@ -12,7 +12,7 @@
 
   <body>
     <header>
-      <nav class='navbar'>
+      <nav class='navbar is-info'>
         <h2> Hotel Online </h2>
         <%= link_to 'Home', root_path, class: 'navbar-item' %>
         <%= link_to 'New Reservation', new_reservation_path, class: 'navbar-item' %>
@@ -22,5 +22,10 @@
     <main>
       <%= yield %>
     </main>
+    <footer class='footer'>
+      <ul>
+        <li>Things</li>
+      </ul>
+    </footer>
   </body>
 </html>
