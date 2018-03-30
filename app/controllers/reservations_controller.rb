@@ -18,13 +18,15 @@ class ReservationsController < ApplicationController
     @new_reservation.room_id = available_room.id
 
     if @new_reservation.save
-      redirect_to reservations_path # why can't this redirect_to the @new_reservation show page?
+      redirect_to reservation_path(@new_reservation.id)
     else
       render :new
     end
   end
 
   def show
+    reservation_id = params[:id]
+    @reservation = Reservation.find(reservation_id)
   end
 
   def edit
