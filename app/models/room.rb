@@ -5,8 +5,7 @@ class Room < ApplicationRecord
     start_date = parse(start_date)
     end_date = parse(end_date)
 
-    # if there already is a reservation, then this room is not available
-    @reservations.each do |reservation|
+    reservations.each do |reservation|
       if overlap_date_range?(start_date, end_date, reservation)
         return :UNAVAILABLE
       end

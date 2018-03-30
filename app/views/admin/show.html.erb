@@ -1,0 +1,5 @@
+<% if !@days_reservations.nil? %>
+  <% @days_reservations.each do |reservation| %>
+    <%= reservation.guest_last_name %>
+  <% end %>
+<% end %>

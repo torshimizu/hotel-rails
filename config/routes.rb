@@ -3,5 +3,6 @@ Rails.application.routes.draw do
 
   root 'admin#index'
   resources :reservations
+  resources :rooms, only: [:index, :show]
   resources :admin
 end
