@@ -36,3 +36,8 @@ main {
   font-size: 2em;
   font-weight: bold;
 }
+
+.errors {
+  width: 30vw;
+  color: rgb(203, 126, 35);
+}

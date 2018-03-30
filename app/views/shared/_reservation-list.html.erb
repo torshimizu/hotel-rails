@@ -1,0 +1,13 @@
+    <li>
+      <ul class='reservation-info'>
+        <li> Last Name: <%= var.guest_last_name %> </li>
+        <li>
+          <% if !var.guest_first_name.nil? %>
+            First Name: <%= var.guest_first_name %>
+          <% end %>
+        </li>
+        <li> Start Date: <%= var.start_date %> </li>
+        <li> End Date: <%= var.end_date %> </li>
+        <li> Daily Rate: <%= var.daily_rate %> </li>
+      </ul>
+    </li>

@@ -1,0 +1,5 @@
+<ul class='reservation-info'>
+  <% @reservations.first(10).each do |reservation| %>
+    <%= render partial: 'shared/reservation-list', locals: { var: reservation } %>
+  <% end %>
+</ul>
