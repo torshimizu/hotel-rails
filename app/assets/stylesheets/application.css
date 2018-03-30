@@ -42,3 +42,7 @@ main {
   width: 30vw;
   color: rgb(203, 126, 35);
 }
+
+.new_reservation {
+  margin: 11vh 0vw;
+}

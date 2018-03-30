@@ -1,3 +1,5 @@
+<h3> All Reservations </h3>
+
 <ul class='reservation-info'>
   <% @reservations.first(10).each do |reservation| %>
     <%= render partial: 'shared/reservation-list', locals: { var: reservation } %>
