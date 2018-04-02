@@ -17,13 +17,13 @@
     <%= submit_tag 'See Reservations', class: 'button is-primary is-outlined is-small' %>
   <% end %>
 </section>
+<br><br>
 
 <section>
-  <%= form_tag '/admin/show', method: 'get' do %>
-    <%= label_tag :room_id %>
-    <%= number_field_tag :room_id %>
-    <%= label_tag :start_date %>
-    <%= date_field_tag :start_date %>
+  <h4>Find Reservation</h4>
+  <%= form_tag find_path('guest_last_name', 'start_date'), method: 'get' do %>
+    <%= label_tag :guest_last_name %>
+    <%= text_field_tag :guest_last_name %>
     <%= submit_tag 'Find Reservation', class: 'button is-primary is-outlined is-small' %>
   <% end %>
 </section>

@@ -42,12 +42,23 @@ class ReservationsController < ApplicationController
   end
 
   def delete
+    Reservation.destroy(params[:id])
+
+    redirect_to root # redirecting here might not be best
   end
 
   def by_date
     date = params[:search_date]
 
     @days_reservations = helpers.list_reservations(date)
+  end
+
+  def find_reservation
+    last_name = params[:guest_last_name]
+
+    found_reservations = Reservation.where("guest_last_name = ?", last_name).order(:start_date)
+    @found_reservations = found_reservations.reverse
+    render 'by_date'
   end
 
   private
