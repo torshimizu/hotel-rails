@@ -4,5 +4,4 @@ class AdminController < ApplicationController
     @rooms = Room.all
     @reservations = Reservation.all
   end
-
 end

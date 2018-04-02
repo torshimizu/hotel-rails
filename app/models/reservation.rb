@@ -22,7 +22,7 @@ class Reservation < ApplicationRecord
   end
 
   def self.list_reservations(start_date)
-    start = Date.parse(start_date)
+    start = Datehelper.parse(start_date)
     date_reservations = Reservation.where("start_date <= ? and end_date > ?", start, start)
     return date_reservations.empty? ? nil : date_reservations
   end

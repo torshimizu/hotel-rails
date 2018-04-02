@@ -8,9 +8,9 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new
   end
 
-  def create
+  def create # what to do with this???
     info = params[:reservation]
-    available_room = helpers.get_available_room(info[:start_date], info[:end_date])
+    available_room = get_available_room(info[:start_date], info[:end_date])
     @reservation = Reservation.new(reservation_params)
     @reservation.room_id = available_room.id
 
@@ -66,4 +66,10 @@ class ReservationsController < ApplicationController
     return params.require(:reservation).permit(:start_date, :end_date, :guest_last_name, :guest_first_name, :daily_rate)
   end
 
+  def get_available_room(start_date, end_date)
+    rooms = Room.all
+    available_rooms = rooms.select { |room| room.check_availability(start_date, end_date) == :AVAILABLE }
+
+    return available_rooms.first
+  end
 end
