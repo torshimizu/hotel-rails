@@ -27,12 +27,27 @@ class ReservationsController < ApplicationController
   end
 
   def edit
+    @reservation = Reservation.find(params[:id])
   end
 
   def update
+    @reservation = Reservation.find(params[:id])
+    @reservation.assign_attributes(reservation_params)
+
+    if @reservation.save
+      redirect_to '/reservations'
+    else
+      render 'edit'
+    end
   end
 
   def delete
+  end
+
+  def by_date
+    date = params[:search_date]
+
+    @days_reservations = helpers.list_reservations(date)
   end
 
   private

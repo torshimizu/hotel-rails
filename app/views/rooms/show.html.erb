@@ -1,7 +1,11 @@
 <h4 class='room-show-header'> Room: <%= @room.id %> </h4>
 
 <ul>
-  <% @room.reservations.each do |reservation| %>
-  <%= render partial: 'shared/reservation-list', locals: { var: reservation } %>
+  <% if @room.reservations.empty? %>
+    <h5> There are no reservations for this room </h5>
+  <% else %>
+    <% @room.reservations.each do |reservation| %>
+      <%= render partial: 'shared/reservation-list', locals: { var: reservation } %>
+    <% end %>
   <% end %>
 </ul>

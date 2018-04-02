@@ -1,22 +1,20 @@
 <h3> Select a room to see reservations: </h3>
 
 <section>
-  <ul id='rooms-list'>
-    <% @rooms.each do |room| %>
-    <li>
+  <% @rooms.each do |room| %>
+    <div class='dropdown-item'>
       <%= link_to "Room: #{room.id}", room_path(room) %>
-    </li>
-    <% end %>
-
-  </ul>
-  <br><br>
+    </div>
+  <% end %>
 </section>
+<br><br>
 
 <section>
-  <%= form_tag '/admin/show', method: 'get' do %>
-    <%= label_tag :start_date %>
-    <%= date_field_tag :start_date %>
-    <%= submit_tag 'See All Reservations for Date', class: 'button is-primary is-outlined is-small' %>
+  <h4>Find all reservations on a date</h4>
+  <%= form_tag by_date_path('search_date'), method: 'get' do  %>
+    <%= label_tag :search_date %>
+    <%= date_field_tag :search_date  %>
+    <%= submit_tag 'See Reservations', class: 'button is-primary is-outlined is-small' %>
   <% end %>
 </section>
 
