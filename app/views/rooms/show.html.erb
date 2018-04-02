@@ -5,6 +5,7 @@
     <h5> There are no reservations for this room </h5>
   <% else %>
     <% @room.reservations.each do |reservation| %>
+      <%# this displays the Room id even though theres a Room # header at the top of this page %>
       <%= render partial: 'shared/reservation-list', locals: { var: reservation } %>
     <% end %>
   <% end %>

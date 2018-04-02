@@ -14,11 +14,15 @@
  *= require_self
  */
 
+.main-icon {
+  height: 8vh;
+}
+
 header h2 {
   font-size: 2.5em;
   padding-left: 2vw;
+  padding-right: 2vw;
 }
-
 
 li {
   list-style-type: none;
@@ -28,6 +32,7 @@ li {
 main {
   margin-top: 10vh;
   margin-left: 2vw;
+  min-height: 92vh;
 }
 
 .reservation-info {
@@ -45,7 +50,7 @@ main {
 }
 
 .new_reservation {
-  margin: 11vh 0vw;
+  margin: 10vh 0vw;
 }
 
 #root {
@@ -61,5 +66,13 @@ main {
   background-color: rgba(238, 113, 113, 1);
   grid-column-start: 2;
   grid-row: 1;
-  padding: 4vh 0 0 3vw;
+  padding: 4vh 3vw;
+}
+
+i {
+    border: solid rgb(132, 131, 133);
+    border-width: 0 1px 1px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
 }

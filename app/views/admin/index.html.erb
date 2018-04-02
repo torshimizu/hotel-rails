@@ -2,11 +2,23 @@
 <article id='root'>
   <section>
     <h3> Select a room to see reservations: </h3>
-    <% @rooms.each do |room| %>
-      <div>
-        <%= link_to "Room: #{room.id}", room_path(room) %>
+    <div class="dropdown is-hoverable">
+      <div class="dropdown-trigger">
+        <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+          <span>Rooms</span>
+          <span class="icon is-small">
+            <i class="arrow down"></i>
+          </span>
+        </button>
       </div>
-    <% end %>
+      <div class="dropdown-menu" id="dropdown-menu" role="menu">
+        <div class="dropdown-content">
+          <% @rooms.each do |room| %>
+            <%= link_to "#{room.id}", room_path(room.id), class: 'dropdown-item' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </section>
   <br><br>
 

@@ -1,4 +1,6 @@
-<%= @reservation.guest_last_name %>
-<%= @reservation.room_id %>
-<%= @reservation.start_date %>
-<%= @reservation.end_date %>
+<ul class='reservation-info'> 
+  <li> <%= @reservation.guest_last_name %> </li>
+  <li> <%= @reservation.room_id %> </li>
+  <li> <%= @reservation.start_date %> </li>
+  <li> <%= @reservation.end_date %> </li>
+</ul>

@@ -13,6 +13,7 @@
   <body class="has-navbar-fixed-top">
     <header>
       <nav class='navbar is-info is-fixed-top'>
+        <%= image_tag 'pup-hotel-icon.png', alt: 'dog house icon', class: 'main-icon' %>
         <h2> Puppy Palace </h2>
         <%= link_to 'Home', root_path, class: 'navbar-item' %>
         <%= link_to 'New Reservation', new_reservation_path, class: 'navbar-item' %>
@@ -24,7 +25,7 @@
     </main>
     <footer class='footer'>
       <ul>
-        <li>Things</li>
+        <li><%= link_to 'Helpful Contacts', 'www.google.com' %></li>
       </ul>
     </footer>
   </body>
