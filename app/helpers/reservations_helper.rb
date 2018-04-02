@@ -15,10 +15,4 @@ module ReservationsHelper
     date_reservations = Reservation.where("start_date <= ? and end_date > ?", start, start)
     return date_reservations.empty? ? nil : date_reservations
   end
-
-  # def find_reservation(start_date:, guest_last_name:)
-  #   start = start_date
-  #   found_reservation = Reservation.where("start_date = ? and guest_last_name = ?", start, guest_last_name)
-  #   return found_reservation.empty? ? nil : found_reservation
-  # end
 end

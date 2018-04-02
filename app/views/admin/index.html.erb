@@ -1,29 +1,33 @@
-<h3> Select a room to see reservations: </h3>
 
-<section>
-  <% @rooms.each do |room| %>
-    <div class='dropdown-item'>
-      <%= link_to "Room: #{room.id}", room_path(room) %>
-    </div>
-  <% end %>
-</section>
-<br><br>
+<article id='root'>
+  <section>
+    <h3> Select a room to see reservations: </h3>
+    <% @rooms.each do |room| %>
+      <div>
+        <%= link_to "Room: #{room.id}", room_path(room) %>
+      </div>
+    <% end %>
+  </section>
+  <br><br>
 
-<section>
-  <h4>Find all reservations on a date</h4>
-  <%= form_tag by_date_path('search_date'), method: 'get' do  %>
-    <%= label_tag :search_date %>
-    <%= date_field_tag :search_date  %>
-    <%= submit_tag 'See Reservations', class: 'button is-primary is-outlined is-small' %>
-  <% end %>
-</section>
-<br><br>
+  <aside class='panel'>
+    <section>
+      <h4>Find all reservations on a date</h4>
+      <%= form_tag by_date_path('search_date'), method: 'get' do  %>
+        <%= label_tag :search_date %>
+        <%= date_field_tag :search_date  %>
+        <%= submit_tag 'See Reservations', class: 'button is-primary is-small' %>
+      <% end %>
+    </section>
+    <br><br>
 
-<section>
-  <h4>Find Reservation</h4>
-  <%= form_tag find_path('guest_last_name', 'start_date'), method: 'get' do %>
-    <%= label_tag :guest_last_name %>
-    <%= text_field_tag :guest_last_name %>
-    <%= submit_tag 'Find Reservation', class: 'button is-primary is-outlined is-small' %>
-  <% end %>
-</section>
+    <section>
+      <h4>Find Reservation</h4>
+      <%= form_tag find_path('guest_last_name', 'start_date'), method: 'get' do %>
+        <%= label_tag :guest_last_name %>
+        <%= text_field_tag :guest_last_name %>
+        <%= submit_tag 'Find Reservation', class: 'button is-primary is-small' %>
+      <% end %>
+    </section>
+  </aside>
+</article>

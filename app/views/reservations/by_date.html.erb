@@ -1,6 +1,6 @@
 <% if !@days_reservations.nil? %>
   <% @days_reservations.each do |reservation| %>
-  <%= render partial: 'shared/reservation-list', locals: { var: reservation } %>
+    <%= render partial: 'shared/reservation-list', locals: { var: reservation } %>
   <% end %>
 <% end %>
 
@@ -8,7 +8,7 @@
 <% if !@found_reservations.nil? %>
   <ul>
     <% @found_reservations.each do |reservation| %>
-    <%= render partial: 'shared/reservation-list', locals: { var: reservation } %>
+      <%= render partial: 'shared/reservation-list', locals: { var: reservation } %>
     <% end %>
   </ul>
 <% end %>

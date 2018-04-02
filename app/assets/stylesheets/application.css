@@ -16,6 +16,7 @@
 
 header h2 {
   font-size: 2.5em;
+  padding-left: 2vw;
 }
 
 
@@ -25,7 +26,7 @@ li {
 }
 
 main {
-  margin-top: 9vh;
+  margin-top: 10vh;
   margin-left: 2vw;
 }
 
@@ -45,4 +46,20 @@ main {
 
 .new_reservation {
   margin: 11vh 0vw;
+}
+
+#root {
+  display: grid;
+  grid-template: 2fr 2fr / 4fr 2fr;
+}
+
+#root > section {
+  grid-row: span 2;
+}
+
+#root aside {
+  background-color: rgba(238, 113, 113, 1);
+  grid-column-start: 2;
+  grid-row: 1;
+  padding: 4vh 0 0 3vw;
 }
