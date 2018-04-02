@@ -50,14 +50,13 @@ class ReservationsController < ApplicationController
   def by_date
     date = params[:search_date]
 
-    @days_reservations = helpers.list_reservations(date)
+    @days_reservations = Reservation.list_reservations(date)
   end
 
   def find_reservation
-    last_name = params[:guest_last_name]
+    last_name = params[:guest_last_name].lstrip.capitalize
 
-    found_reservations = Reservation.where("guest_last_name = ?", last_name).order(:start_date)
-    @found_reservations = found_reservations.reverse
+    @found_reservations = Reservation.find_reservation(last_name)
     render 'by_date'
   end
 
