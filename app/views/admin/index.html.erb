@@ -25,7 +25,7 @@
   <aside class='panel'>
     <section>
       <h4>Find all reservations on a date</h4>
-      <%= form_tag by_date_path('search_date'), method: 'get' do  %>
+      <%= form_tag by_date_path, method: 'get' do  %>
         <%= label_tag :search_date %>
         <%= date_field_tag :search_date  %>
         <%= submit_tag 'See Reservations', class: 'button is-primary is-small' %>
@@ -35,7 +35,7 @@
 
     <section>
       <h4>Find Reservation</h4>
-      <%= form_tag find_path('guest_last_name', 'start_date'), method: 'get' do %>
+      <%= form_tag find_path, method: 'get' do %>
         <%= label_tag :guest_last_name %>
         <%= text_field_tag :guest_last_name %>
         <%= submit_tag 'Find Reservation', class: 'button is-primary is-small' %>

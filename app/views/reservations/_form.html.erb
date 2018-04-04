@@ -2,9 +2,9 @@
 <section>
   <% if @reservation.errors.any? %>
     <ul class="errors">
-      <% @reservation.errors.each do |column, message| %>
+      <% @reservation.errors.messages.each do |column, message| %>
       <li>
-        <strong><%= column.capitalize %></strong> <%= message %>
+        <strong><%= column.to_s.gsub("_", " ").capitalize %></strong> - <%= message.first %>
       </li>
       <% end %>
     </ul>

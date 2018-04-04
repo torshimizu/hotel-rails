@@ -1,8 +1,16 @@
 require_relative 'concerns/datehelper.rb'
 
 class Room < ApplicationRecord
-  has_many :reservations
   include Datehelper
+
+  has_many :reservations
+
+  def self.no_overlap(checkin, checkout)
+    checkin = Datehelper.parse(checkin)
+    checkout = Datehelper.parse(checkout)
+  # returns entries that do not overlap with range
+    return Room.all.select {|room| room.check_availability(checkin, checkout) == :AVAILABLE}
+  end
 
   def check_availability(start_date, end_date)
     start_date = Datehelper.parse(start_date)
@@ -16,9 +24,6 @@ class Room < ApplicationRecord
     return :AVAILABLE
 
   end
-
-
-  private
 
 
 end

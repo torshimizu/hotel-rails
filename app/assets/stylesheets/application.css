@@ -35,8 +35,10 @@ main {
   min-height: 92vh;
 }
 
-.reservation-info {
+.all-reservations {
   margin-bottom: 2em;
+  display: grid;
+  grid-template-columns: 60vw 40vw;
 }
 
 .room-show-header {

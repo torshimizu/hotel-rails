@@ -10,7 +10,8 @@ class ReservationsController < ApplicationController
 
   def create # what to do with this???
     info = params[:reservation]
-    available_room = get_available_room(info[:start_date], info[:end_date])
+    available_room = Room.no_overlap(info[:start_date], info[:end_date]).first
+
     @reservation = Reservation.new(reservation_params)
     @reservation.room_id = available_room.id
 
